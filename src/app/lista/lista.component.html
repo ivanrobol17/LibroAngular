@@ -1,0 +1,8 @@
+<table>
+    <thead>
+        <th>ID</th><th>Titolo</th><th>Tipo</th>
+    </thead>
+    <tbody *ngFor="let libro of listaLibri;let id = index">
+    <td>{{id}}</td><td>{{libro.titolo}}</td> <td>{{libro.tipo}}</td>
+    </tbody>
+</table>

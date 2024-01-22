@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Libro } from '../domain/Libro';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Libri';
+  listaLibri : Libro[]=[]
+  aggiungi : boolean = false
+  aggiungiLibro(nuovoLibro:Libro){
+    this.listaLibri.unshift(nuovoLibro)
+    if (this.aggiungi){
+      this.aggiungi=false
+    }else{
+      this.aggiungi=true
+    }
+  }
+  cambiaSchermata(){
+    if (this.aggiungi){
+      this.aggiungi=false
+    }else{
+      this.aggiungi=true
+    }
+  }
 }
