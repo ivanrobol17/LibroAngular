@@ -1,4 +1,4 @@
-<button (click)="cambiaSchermata()">Cambia schermata</button>
+<button mat-raised-button color="primary" (click)="cambiaSchermata()">Cambia schermata</button>
 <div *ngIf="aggiungi; else alternativa" >
 <app-inserimento (inviaLibro)="aggiungiLibro($event)"></app-inserimento>
 </div>

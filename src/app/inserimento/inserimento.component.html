@@ -1,6 +1,14 @@
 <h1>Inserisci un nuovo libro</h1>
 <div>
-    <input type="text" [(ngModel)]="titolo" placeholder="Scrivi qui il titolo"/>
-    <input type="text" [(ngModel)]="tipo" placeholder="Scrivi qui il tipo"/>
-    <button (click)="aggiungiLibro()">Aggiungi libro</button>
+    <mat-form-field>
+        <mat-label>Scrivi qui il titolo</mat-label>
+        <input matInput [(ngModel)]="titolo">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Scrivi qui il tipo</mat-label>
+        <input matInput [(ngModel)]="tipo">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button type="submit" color="accent" (click)="aggiungiLibro()">Aggiungi libro</button>
 </div>
