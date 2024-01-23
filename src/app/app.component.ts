@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Libro } from '../domain/Libro';
+import { Libro } from './domain/Libro';
+import { DatiService } from './services/dati.service';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,20 @@ import { Libro } from '../domain/Libro';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  listaLibri : Libro[]=[]
+  //listaLibri : Libro[]=[]
+  //datiService : DatiService = new DatiService()
   aggiungi : boolean = false
+  constructor(public datiService : DatiService){
+
+  }
   aggiungiLibro(nuovoLibro:Libro){
-    this.listaLibri.push(nuovoLibro)
+    this.datiService.addLibro(nuovoLibro)
     this.aggiungi=!this.aggiungi
   }
   cambiaSchermata(){
     this.aggiungi=!this.aggiungi
   }
   eliminaLibro(idLibro: number){
-    this.listaLibri.splice(idLibro, 1)
+    this.datiService.removeLibro(idLibro)
   }
 }

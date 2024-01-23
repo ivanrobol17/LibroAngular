@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Libro } from '../../domain/Libro';
+import { Libro } from '../domain/Libro';
 
 @Component({
   selector: 'app-inserimento',
