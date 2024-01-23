@@ -1,8 +1,11 @@
+<h1>Lista di libri</h1>
 <table>
     <thead>
         <th>ID</th><th>Titolo</th><th>Tipo</th><th>Cancella</th>
     </thead>
-    <tbody *ngFor="let libro of listaLibri;let id = index">
+    <tbody>
+    <tr *ngFor="let libro of listaLibri;let id = index">
     <td>{{id}}</td><td>{{libro.titolo}}</td> <td>{{libro.tipo}}</td><td><button (click)="eliminaLibro(id)">Cancella</button></td>
+    </tr>
     </tbody>
 </table>

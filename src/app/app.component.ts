@@ -11,18 +11,10 @@ export class AppComponent {
   aggiungi : boolean = false
   aggiungiLibro(nuovoLibro:Libro){
     this.listaLibri.push(nuovoLibro)
-    if (this.aggiungi){
-      this.aggiungi=false
-    }else{
-      this.aggiungi=true
-    }
+    this.aggiungi=!this.aggiungi
   }
   cambiaSchermata(){
-    if (this.aggiungi){
-      this.aggiungi=false
-    }else{
-      this.aggiungi=true
-    }
+    this.aggiungi=!this.aggiungi
   }
   eliminaLibro(idLibro: number){
     this.listaLibri.splice(idLibro, 1)
