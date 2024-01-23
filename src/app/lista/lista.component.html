@@ -5,7 +5,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let libro of listaLibri;let id = index">
-    <td>{{id}}</td><td>{{libro.titolo}}</td> <td>{{libro.tipo}}</td><td><button mat-raised-button color="warn" (click)="eliminaLibro(id)">Cancella</button></td>
+    <td>{{id}}</td><td>{{libro.titolo}}</td> <td>{{libro.tipo}}</td><td><button mat-mini-fab color="warn" (click)="eliminaLibro(id)"><mat-icon>delete</mat-icon></button></td>
     </tr>
     </tbody>
 </table>

@@ -1,7 +1,8 @@
-<button mat-raised-button color="primary" (click)="cambiaSchermata()">Cambia schermata</button>
-<div *ngIf="aggiungi; else alternativa" >
-<app-inserimento (inviaLibro)="aggiungiLibro($event)"></app-inserimento>
+<div *ngIf="aggiungi; else alternativa">
+    <button mat-raised-button color="primary" (click)="cambiaSchermata()">Mostra Libri</button>
+    <app-inserimento (inviaLibro)="aggiungiLibro($event)"></app-inserimento>
 </div>
 <ng-template #alternativa>
-<app-lista [listaLibri]="datiService.getLibri()" (idLibro)="eliminaLibro($event)"></app-lista>
-</ng-template>
+    <button mat-raised-button color="primary" (click)="cambiaSchermata()">Inserisci Libro</button>
+    <app-lista [listaLibri]="datiService.getLibri()" (idLibro)="eliminaLibro($event)"></app-lista>
+</ng-template>  

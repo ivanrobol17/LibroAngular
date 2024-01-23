@@ -17,11 +17,11 @@ export class DatiService{
     getLibro(idLibro:number){
         return this.elencoLibri[idLibro]
     }
-    // toString(): string{
-    //     s : string = ""
-    //     for (let libro of this.elencoLibri){
-    //         str+="t"
-    //     }
-    //     return str
-    // }
+    toString(): string{
+        let str : string = ""
+        for (let libro of this.elencoLibri){
+            str+=libro.titolo+" --> "+libro.tipo+"\n"
+        }
+        return str
+    }
 }
