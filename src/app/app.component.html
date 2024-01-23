@@ -3,5 +3,5 @@
 <app-inserimento (inviaLibro)="aggiungiLibro($event)"></app-inserimento>
 </div>
 <ng-template #alternativa>
-<app-lista [listaLibri]="listaLibri"></app-lista>
+<app-lista [listaLibri]="listaLibri" (idLibro)="eliminaLibro($event)"></app-lista>
 </ng-template>

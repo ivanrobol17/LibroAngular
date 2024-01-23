@@ -10,7 +10,7 @@ export class AppComponent {
   listaLibri : Libro[]=[]
   aggiungi : boolean = false
   aggiungiLibro(nuovoLibro:Libro){
-    this.listaLibri.unshift(nuovoLibro)
+    this.listaLibri.push(nuovoLibro)
     if (this.aggiungi){
       this.aggiungi=false
     }else{
@@ -23,5 +23,8 @@ export class AppComponent {
     }else{
       this.aggiungi=true
     }
+  }
+  eliminaLibro(idLibro: number){
+    this.listaLibri.splice(idLibro, 1)
   }
 }
