@@ -5,7 +5,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let libro of json$ | async">
-    <td>{{libro.userId}}</td><td>{{libro.id}}</td> <td>{{libro.title}}</td><td>{{libro.completed}}</td><td><button mat-mini-fab color="warn" (click)="eliminaLibro(libro.id)"><mat-icon>delete</mat-icon></button></td>
+    <td>{{libro.userId}}</td><td>{{libro.id}}</td> <td>{{libro.title}}</td><td>{{libro.completed}}</td><td><button mat-mini-fab color="warn" (click)="eliminaLibro(libro.id)"><mat-icon>delete</mat-icon></button></td><td><button mat-mini-fab color="accent" (click)="modificaLibro(libro.id)"><mat-icon>edit</mat-icon></button></td>
     </tr>
     </tbody>
 </table>

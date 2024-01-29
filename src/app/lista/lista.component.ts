@@ -10,6 +10,7 @@ import { JsonService } from '../services/json.service';
 })
 export class ListaComponent {
   json$ : Observable<Libro[]>
+  @Output() modifica = new EventEmitter<number>()
   constructor(public jsonService : JsonService){
     this.json$=jsonService.getJson()
   }
@@ -20,6 +21,9 @@ export class ListaComponent {
         alert("eliminato l'elemento "+i)
       }
     )
+  }
+  modificaLibro(id:number){
+    this.modifica.emit(id)
   }
 }
  

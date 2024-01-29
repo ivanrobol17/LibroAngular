@@ -1,0 +1,23 @@
+<div *ngIf="modifica else alternativa">
+    <h1>Inserisci un nuovo libro</h1>
+    <div>
+        <mat-form-field>
+            <mat-label>Scrivi qui l'Id dell'user</mat-label>
+            <input type="number" min="1" matInput [(ngModel)]="userId">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Scrivi qui l'Id</mat-label>
+            <input type="number" min="1" matInput [(ngModel)]="id" [disabled]="true">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Scrivi qui il titolo</mat-label>
+            <input matInput [(ngModel)]="title">
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="completed">Completato</mat-checkbox>
+        <br>
+        <button mat-raised-button type="submit" color="accent" (click)="modificaLibro()">Modifica libro</button>
+    </div>
+</div>
+<ng-template #alternativa>
+    <app-lista (modifica)="caricaLibro($event)"></app-lista>
+</ng-template>

@@ -35,6 +35,7 @@ export class InserimentoComponent {
   }
   inserisciLibro(){
     let lib : Libro = {userId:this.userId, id:this.id, title:this.title, completed:this.completed}
+    console.log(this.jsonService.getLibroJson(this.id))
     this.jsonService.postLibroJson(lib).subscribe(
       data =>{
         console.log("creato elemento con i seguenti dati: \n",data)

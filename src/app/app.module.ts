@@ -18,12 +18,27 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { ModificaComponent } from './modifica/modifica.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
+@NgModule({
+  imports: [
+    MatCheckboxModule,
+    MatFormFieldModule,
+    // ... altri moduli di Angular Material ...
+  ],
+  // ... altre dichiarazioni e configurazioni ...
+})
+export class TuoModulo { }
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InserimentoComponent,
     ListaComponent,
+    ModificaComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatButtonModule, MatDividerModule, MatIconModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
+    MatCheckboxModule,
     MatTableModule,
     HttpClientModule
   ],

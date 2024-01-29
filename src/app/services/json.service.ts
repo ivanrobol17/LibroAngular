@@ -21,4 +21,7 @@ export class JsonService {
   postLibroJson(libro:Libro):Observable<Libro[]>{
     return this.httpClient.post<Libro[]>(this.url, libro)
   }
+  putLibroJson(libro:Libro, id:number):Observable<Libro>{
+    return this.httpClient.put<Libro>(this.url+id,libro)
+  }
 }

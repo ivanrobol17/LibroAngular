@@ -26,20 +26,10 @@
         <input type="number" min="1" matInput [(ngModel)]="userId">
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Scrivi qui l'Id</mat-label>
-        <input type="number" min="1" matInput [(ngModel)]="id">
-    </mat-form-field>
-    <mat-form-field>
         <mat-label>Scrivi qui il titolo</mat-label>
         <input matInput [(ngModel)]="title">
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>Completato</mat-label>
-        <mat-select [(ngModel)]="completed">
-          <mat-option value="true">True</mat-option>
-          <mat-option value="false">False</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <mat-checkbox [(ngModel)]="completed">Completato</mat-checkbox>
     <br>
     <button mat-raised-button type="submit" color="accent" (click)="inserisciLibro()">Crea libro</button>
 </div>
