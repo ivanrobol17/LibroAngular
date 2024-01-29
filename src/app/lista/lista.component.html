@@ -1,11 +1,11 @@
 <h1>Lista di libri</h1>
 <table>
     <thead>
-        <th>ID</th><th>Titolo</th><th>Tipo</th><th>Cancella</th>
+        <th>userId</th><th>id</th><th>titolo</th><th>completed</th><th></th>
     </thead>
     <tbody>
-    <tr *ngFor="let libro of listaLibri;let id = index">
-    <td>{{id}}</td><td>{{libro.titolo}}</td> <td>{{libro.tipo}}</td><td><button mat-mini-fab color="warn" (click)="eliminaLibro(id)"><mat-icon>delete</mat-icon></button></td>
+    <tr *ngFor="let libro of json$ | async">
+    <td>{{libro.userId}}</td><td>{{libro.id}}</td> <td>{{libro.title}}</td><td>{{libro.completed}}</td><td><button mat-mini-fab color="warn" (click)="eliminaLibro(libro.id)"><mat-icon>delete</mat-icon></button></td>
     </tr>
     </tbody>
 </table>

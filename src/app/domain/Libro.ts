@@ -1,4 +1,6 @@
 export interface Libro{
-    titolo: string;
-    tipo: string;
-}
+    userId:number;
+    id: number;
+    title: string;
+    completed: boolean;
+}   

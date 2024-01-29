@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Libro } from '../domain/Libro';
+import { Observable } from 'rxjs';
+import { JsonService } from '../services/json.service';
 
 @Component({
   selector: 'app-lista',
@@ -7,10 +9,17 @@ import { Libro } from '../domain/Libro';
   styleUrl: './lista.component.css'
 })
 export class ListaComponent {
-  @Input() listaLibri : Libro[] = []
-  @Output() idLibro  = new EventEmitter<number>()
+  json$ : Observable<Libro[]>
+  constructor(public jsonService : JsonService){
+    this.json$=jsonService.getJson()
+  }
   eliminaLibro(i: number){
-    this.idLibro.emit(i)
+    this.jsonService.deleteLibroJson(i).subscribe(
+      data =>{
+        console.log("cancellato: ",data)
+        alert("eliminato l'elemento "+i)
+      }
+    )
   }
 }
  

@@ -17,12 +17,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     InserimentoComponent,
-    ListaComponent
+    ListaComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatButtonModule, MatDividerModule, MatIconModule,
     MatFormFieldModule, MatInputModule, MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

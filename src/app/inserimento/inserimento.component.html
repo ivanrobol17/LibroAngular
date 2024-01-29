@@ -1,14 +1,57 @@
+<h1>Cerca un libro</h1>
+<div>
+    <mat-form-field>
+        <mat-label>Scrivi qui l'Id</mat-label>
+        <input type="number" min="1" matInput [(ngModel)]="id">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button type="submit" color="accent" (click)="cercaLibro()">Cerca libro</button>
+</div>
+<div *ngIf="json$cercato.length>0">
+    <table>
+    <thead>
+        <th>userId</th><th>id</th><th>titolo</th><th>completed</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let libro of json$cercato">
+    <td>{{libro.userId}}</td><td>{{libro.id}}</td> <td>{{libro.title}}</td><td>{{libro.completed}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
 <h1>Inserisci un nuovo libro</h1>
 <div>
     <mat-form-field>
-        <mat-label>Scrivi qui il titolo</mat-label>
-        <input matInput [(ngModel)]="titolo">
+        <mat-label>Scrivi qui l'Id dell'user</mat-label>
+        <input type="number" min="1" matInput [(ngModel)]="userId">
     </mat-form-field>
-    <br>
     <mat-form-field>
-        <mat-label>Scrivi qui il tipo</mat-label>
-        <input matInput [(ngModel)]="tipo">
+        <mat-label>Scrivi qui l'Id</mat-label>
+        <input type="number" min="1" matInput [(ngModel)]="id">
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>Scrivi qui il titolo</mat-label>
+        <input matInput [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Completato</mat-label>
+        <mat-select [(ngModel)]="completed">
+          <mat-option value="true">True</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
     <br>
-    <button mat-raised-button type="submit" color="accent" (click)="aggiungiLibro()">Aggiungi libro</button>
+    <button mat-raised-button type="submit" color="accent" (click)="inserisciLibro()">Crea libro</button>
+</div>
+<div *ngIf="json$inserito.length>0">
+    <table>
+    <thead>
+        <th>userId</th><th>id</th><th>titolo</th><th>completed</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let libro of json$inserito">
+    <td>{{libro.userId}}</td><td>{{libro.id}}</td> <td>{{libro.title}}</td><td>{{libro.completed}}</td>
+    </tr>
+    </tbody>
+</table>
 </div>
